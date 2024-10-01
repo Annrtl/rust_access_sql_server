@@ -1,0 +1,24 @@
+services:
+
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rajecto
+      MYSQL_USER: annrtl
+      MYSQL_PASSWORD: pass
+      MYSQL_TCP_PORT: 3306  # Forcer MariaDB à écouter sur ce port TCP
+    volumes:
+      - type: bind
+        source: ./data
+        target: /var/lib/mysql
+    ports:
+      - 3306:3306
+
+  #adminer:
+  #  image: adminer
+  #  restart: always
+  #  ports:
+  #    - 8080:8080
