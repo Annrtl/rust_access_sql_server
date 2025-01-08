@@ -6,4 +6,6 @@ edition = "2021"
 [dependencies]
 futures = "0.3.28"
 sea-orm = { version = "^0.12.0", features = [ "sqlx-mysql", "runtime-async-std-native-tls", "macros" ] }
-xilem = "0.1"
+xilem = { path = "../xilem/xilem" }
+xilem_core = { path = "../xilem/xilem_core" }
+masonry = { path = "../xilem/masonry" }
